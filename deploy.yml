@@ -1,0 +1,34 @@
+---
+version: "2.0"
+
+services:
+  ourapp:
+    image: username/akash_web_app:0.0.1
+    expose:
+      - port: 8080
+        as: 8080
+        to:
+          - global: true
+
+profiles:
+  compute:
+    ourapp:
+      resources:
+        cpu:
+          units: 1.0
+        memory:
+          size: 512Mi
+        storage:
+          size: 512Mi
+  placement:
+    akash:
+      pricing:
+        ourapp:
+          denom: uakt
+          amount: 10000
+
+deployment:
+  ourapp:
+    akash:
+      profile: ourapp
+      count: 1
