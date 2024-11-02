@@ -9,7 +9,7 @@
 Clone the repository
 
 ```
-$ git clone https://github.com/piberdev/python-deployment-workshop
+git clone https://github.com/piberdev/python-deployment-workshop
 ```
 
 3. Testing the web-app locally, not containerized
